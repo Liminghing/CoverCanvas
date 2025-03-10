@@ -1,0 +1,5 @@
+.selectToolTitle {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* 버튼들이 자동으로 배치됨 */
+  gap: 8px; /* 버튼 사이 간격 조정 */
+}

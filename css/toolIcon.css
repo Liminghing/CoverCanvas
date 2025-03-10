@@ -1,0 +1,31 @@
+.toolIcon-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* 버튼들이 자동으로 배치됨 */
+  gap: 8px; /* 버튼 사이 간격 조정 */
+}
+
+.toolIcon-btn {
+  display: none;
+}
+
+.toolIcon-label {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #00000010;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  text-align: center;
+  width: 100%; /* 라벨을 버튼 크기에 맞게 100% 채움 */
+}
+
+
+.toolIcon-btn:checked + .toolIcon-label {
+  background-color: #00000040;
+  color: white;
+}
+.toolIcon-btn:focus + .toolIcon-label {
+  outline: 2px solid #00000040;
+}
+

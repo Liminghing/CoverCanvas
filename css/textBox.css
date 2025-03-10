@@ -1,0 +1,10 @@
+.boxStyle {
+  border-radius: 4px; /* 둥근 모서리 */
+  padding-left: 4px; /* 왼쪽 패딩 */
+  padding-right: 4px; /* 오른쪽 패딩 */
+  padding-top: 0; /* 위쪽 패딩은 0 */
+  padding-bottom: 0; /* 아래쪽 패딩은 0 */
+  background-color: #9B5CA1;
+  display: inline-block;
+  font-weight: 100;
+}

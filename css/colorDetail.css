@@ -1,0 +1,34 @@
+.colorDetail-container {
+  justify-content: space-evenly;
+  display: flex;
+  gap: 8px; /* 버튼 사이 간격 조정 */
+}
+
+.colorDetail-btn {
+  display: none;
+}
+
+.colorDetail-label {
+  width: 40px; /* 썸의 너비 */
+  height: 40px; /* 썸의 높이 */
+  border-radius: 50%; /* 둥근 모양 */
+  cursor: pointer;
+  border: 4px solid white;
+}
+
+.colorDetail-btn:checked + .colorDetail-label {
+  border: 4px solid #00000030 !important;
+}
+
+#bgColorDetail1 + .colorDetail-label {
+  background: #FFEDE9;
+}
+#bgColorDetail2 + .colorDetail-label {
+  background: #FFF6EF;
+}
+#bgColorDetail3 + .colorDetail-label {
+  background: #E7F1E8;
+}
+#bgColorDetail4 + .colorDetail-label {
+  background: #ECD3FF;
+}

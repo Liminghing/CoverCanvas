@@ -1,0 +1,54 @@
+header {
+  background: transparent;
+}
+.bg-gray-100{
+  background-color: transparent;
+}
+.shadow-md {
+  box-shadow: none;
+}
+.bg-white-345 {
+  background-color:transparent;
+}
+.bg-white-456{
+  background-color:white;
+  height: 30rem;
+  border-radius: 5px;
+  cursor: se-resize;
+}
+.frame {
+  background-color: white;
+  border-radius: 10px;
+  aspect-ratio: 4 / 3;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
+  resize: both;
+
+  /* 중앙 정렬 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.icon {
+  width: 30%;
+  /* width: 200px; 
+  height: 200px; */
+}
+.container02 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
+  gap: 8px; /* 버튼 사이 간격 조정 */
+}
+.container03 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
+  gap: 8px; /* 버튼 사이 간격 조정 */
+}
+
+
+#canvas {
+  display: none;
+}

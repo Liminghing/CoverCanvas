@@ -1,0 +1,16 @@
+#myCanvas {
+  background-color: white;
+  border-radius: 5px;
+  margin: 20px;
+  padding: 20px;
+  aspect-ratio: 4 / 3;
+  min-width: 150px; /* 최소 너비 설정 */
+  min-height: 150px; /* 최소 높이 설정 */
+  overflow: auto;
+  resize: both;
+
+  /* 중앙 정렬 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

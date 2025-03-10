@@ -1,0 +1,35 @@
+.finalContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* 버튼들이 자동으로 배치됨 */
+  gap: 8px; /* 버튼 사이 간격 조정 */
+}
+.finalContainer-bg {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #00000010;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  text-align: center;
+  width: 100%; /* 라벨을 버튼 크기에 맞게 100% 채움 */
+}
+.bg-down {
+  color: white;
+  background-color: #757575;
+  
+}
+.bg-reset {
+  color: black;
+  background-color: #ffffff;
+}
+
+.bg-down:active {
+  color: white;
+  background-color: #494949;
+  
+}
+.bg-reset:active {
+  color: black;
+  background-color: #d6d6d6;
+}

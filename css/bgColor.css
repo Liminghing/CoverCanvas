@@ -1,0 +1,36 @@
+.bgColor-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* 버튼들이 자동으로 배치됨 */
+  gap: 8px; /* 버튼 사이 간격 조정 */
+}
+
+.bgColor-btn {
+  display: none;
+}
+
+.bgColor-label {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #00000010;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  text-align: center;
+  width: 100%; /* 라벨을 버튼 크기에 맞게 100% 채움 */
+}
+
+.bgColor-btn:checked + .bgColor-label {
+  background-color: #00000040;
+  color: white;
+}
+
+.bgColor-btn:focus + .bgColor-label {
+  outline: 2px solid #00000040;
+}
+
+/* 기본 선택 상태 */
+.toolIcon-btn:checked + .bgColor-label {
+  background-color: #00000040;
+  color: white;
+}

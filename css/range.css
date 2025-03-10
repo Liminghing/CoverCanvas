@@ -1,0 +1,51 @@
+.rangeInput{
+  width: 100%;
+  background: linear-gradient(to right, #F47976 0%, #F47976 10%, #00000020 10%, #00000020 100%);
+  border-radius: 8px;
+  height: 8px;
+  outline: none;
+  -webkit-appearance: none;
+  accent-color: #fff;
+}
+
+/* 썸 모양 변경 */
+.rangeInput::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px; /* 썸의 너비 */
+  height: 20px; /* 썸의 높이 */
+  background: #fff; /* 썸의 색상 */
+  border-radius: 50%; /* 둥근 모양 */
+  cursor: pointer;
+}
+
+.rangeInput::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.rangeInput::-ms-thumb {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* 클릭시 색상 변경 */
+
+.rangeInput::-webkit-slider-thumb:active {
+  width: 20px;
+  background: #f4f4f4; /* 기존보다 어두운 색 */
+}
+
+.rangeInput::-moz-range-thumb:active {
+  background: #f4f4f4;
+}
+
+.rangeInput::-ms-thumb:active {
+  background: #f4f4f4;
+}

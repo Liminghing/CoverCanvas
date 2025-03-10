@@ -1,0 +1,8 @@
+.bg-primary {
+  --tw-bg-opacity: 1;
+  background-color: #f47976;
+}
+.bg-primary:hover {
+  --tw-bg-opacity: 1;
+  background-color: #df605e;
+}
