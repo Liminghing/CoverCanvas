@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
       backgroundColor: null, // 배경을 투명하게 설정
       width: parseInt(computedStyle.width),
       height: parseInt(computedStyle.height),
-      scale: 2, // 이미지 품질 향상을 위한 스케일 값
+      scale: 5, // 이미지 품질 향상을 위한 스케일 값
       useCORS: true, // 외부 이미지 리소스 허용
       onclone: function(clonedDoc) {
         // 복제된 DOM에서 추가 스타일 조정 가능

@@ -1,0 +1,28 @@
+.scroll-container {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  
+  cursor: grab;
+  user-select: none;
+  border-radius: 10px;
+}
+.scroll-container ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.scroll-container li {
+  flex: 0 0 auto;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+.scroll-container li img{
+  height: 100%;
+}

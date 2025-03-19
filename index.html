@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cover Image Generator</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="myCss.css" rel="stylesheet">
     <link href="css/toolIcon.css" rel="stylesheet">
@@ -16,6 +15,7 @@
     <link href="css/colorDetail.css" rel="stylesheet">
     <link href="css/selectToolTitle.css" rel="stylesheet">
     <link href="css/searchBar.css" rel="stylesheet">
+    <link href="css/test.css" rel="stylesheet">
     <style>
         html {
             background: linear-gradient(to bottom, #FCECF0, #F3EDFE);
@@ -59,13 +59,12 @@
         }
         .md\:ml-8 {
                 margin-left: 0 !important;
-            }
-
+        }
+        
     </style>
     
 </head>
 <body class="text-gray-800">
-    <!-- header -->
     <header>
         <div class="container mx-auto flex items-center justify-between p-4">
             <div class="flex items-center">
@@ -79,18 +78,18 @@
         </div>
     </header>
 
-    <main class="container mx-auto p-8 flex flex-col md:flex-row">
+    <main class="container mx-auto p-3 flex flex-col md:flex-row">
         <!-- main -->
-        <div class="md:w-2/3 bg-white-345 p-8 mb-8 md:mb-0">
+        <div class="md:w-2/3 bg-white-345 p-4 mb-8 md:mb-0">
             <div id="capture_area" class="frame shadow-md flex-grow">
-                <img src="res/empty_icon.svg" class="icon">
+                <img id = "container-icon" src="res/empty_icon.svg" class="icon">
             </div>
         </div>
 
         <canvas id="canvas" width="500" height="500"></canvas>
 
         <!-- aside -->
-        <aside class="md:w-1/3 md:ml-8 p-8">
+        <aside class="md:w-1/3 md:ml-8 p-4">
             <!-- aside : Select Tool -->
             <div id="selectToolTitle"class="flex">
                 <h2 class="text-lg font-bold mb-4">Select Tool</h2>              
@@ -109,11 +108,9 @@
                 </div>
             </form>  
             <div class="flex space-x-2 mb-4">
-                <div class="bg-gray-200 w-10 h-10"></div>
-                <div class="bg-gray-200 w-10 h-10"></div>
-                <div class="bg-gray-200 w-10 h-10"></div>
-                <div class="bg-gray-200 w-10 h-10"></div>
-                <div class="bg-gray-200 w-10 h-10"></div>
+                <div class="scroll-container">
+                    <ul id="list-container"></ul>
+                </div>
             </div>
 
             <!-- aside : Tool Icon Color -->
@@ -139,17 +136,14 @@
                 <label for="bgColor2" class="bgColor-label">Gradient</label>
             </div>
             <div class="colorDetail-container mb-4">
-                <input type="radio" id="bgColorDetail1" name="colorDetail-group" class="colorDetail-btn" checked>
-                <label for="bgColorDetail1" class="colorDetail-label"></label>
+                <input type="radio" id="bgColorDetail1" name="colorDetail-group" class="colorDetail-btn">
+                <label id="radio-contaion01" for="bgColorDetail1" class="colorDetail-label"></label>
             
                 <input type="radio" id="bgColorDetail2" name="colorDetail-group" class="colorDetail-btn">
-                <label for="bgColorDetail2" class="colorDetail-label"></label>
+                <label id="radio-contaion02" for="bgColorDetail2" class="colorDetail-label"></label>
 
                 <input type="radio" id="bgColorDetail3" name="colorDetail-group" class="colorDetail-btn">
-                <label for="bgColorDetail3" class="colorDetail-label"></label>
-            
-                <input type="radio" id="bgColorDetail4" name="colorDetail-group" class="colorDetail-btn">
-                <label for="bgColorDetail4" class="colorDetail-label"></label>
+                <label id="radio-contaion03" for="bgColorDetail3" class="colorDetail-label"></label>
             </div>
 
             <!-- aside : Background Rounding -->
@@ -158,20 +152,20 @@
 
             <!-- aside : Image Ratio -->
             <h3 class="font-bold mb-2">Image Ratio</h3>
-            <div class="imgRatio-container mb-4">
-                <input type="radio" id="imgRatio1" name="imgRatio-group" class="imgRatio-btn" checked>
+            <div id="imageRatioGp"class="imgRatio-container mb-4">
+                <input type="radio" id="imgRatio1" name="imgRatio-group" class="imgRatio-btn" value="Auto" checked>
                 <label for="imgRatio1" class="imgRatio-label">Auto</label>
             
-                <input type="radio" id="imgRatio2" name="imgRatio-group" class="imgRatio-btn">
+                <input type="radio" id="imgRatio2" name="imgRatio-group" class="imgRatio-btn" value="4:3">
                 <label for="imgRatio2" class="imgRatio-label">4:3</label>
 
-                <input type="radio" id="imgRatio3" name="imgRatio-group" class="imgRatio-btn">
+                <input type="radio" id="imgRatio3" name="imgRatio-group" class="imgRatio-btn" value="1:1">
                 <label for="imgRatio3" class="imgRatio-label">1:1</label>
 
-                <input type="radio" id="imgRatio4" name="imgRatio-group" class="imgRatio-btn">
+                <input type="radio" id="imgRatio4" name="imgRatio-group" class="imgRatio-btn" value="Notion">
                 <label for="imgRatio4" class="imgRatio-label">Notion</label>
 
-                <input type="radio" id="imgRatio5" name="imgRatio-group" class="imgRatio-btn">
+                <input type="radio" id="imgRatio5" name="imgRatio-group" class="imgRatio-btn" value="YouTube">
                 <label for="imgRatio5" class="imgRatio-label">YouTube</label>
             </div>
 
@@ -179,14 +173,18 @@
             <!-- aside : Download Image -->
             <h3 class="font-bold mb-2">Download Type</h3>
             <div class="finalContainer">
-                <button class="bg-reset shadow-md finalContainer-bg p-2">Reset</button>
+                <button id="resetButton" class="bg-reset shadow-md finalContainer-bg p-2">Reset</button>
                 <button id="downloadButton" class="bg-down shadow-md finalContainer-bg p-2">Download</button>
             </div>
         </aside>
     </main>
     <script src = "js/rangeUpdate.js"></script>
-    <script src = "js/syncFrameRatio.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.6.0/color-thief.min.js" integrity="sha512-Qsp00gBIzIqLPECogMy5bQ6uOsMig9lc37A8qEHMvSze65UK21DHONbfSTY09zE9V8C0tQN+ldPU6w0wlBSfcA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src = "js/downFrame.js"></script>
+    <script src = "js/loadItem.js"></script>
+    <script src = "js/setFrameRatio.js"></script>
+    <script src = "js/setPrimaryColor.js"></script>
+    <script src = "js/reset.js"></script>
 </body>
 </html>
